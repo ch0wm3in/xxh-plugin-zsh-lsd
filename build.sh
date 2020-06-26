@@ -39,6 +39,7 @@ lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd
 if [ -x "$(command -v wget)" ]; then
   wget $lsd_url
   tar xf  lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz lsd-$lsd_release-x86_64-unknown-linux-gnu/lsd --strip-components=1
+  rm lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz
 fi
 #elif [ -x "$(command -v curl)" ]; then
 #  curl $arg_s -L $portable_url -o $tarname
