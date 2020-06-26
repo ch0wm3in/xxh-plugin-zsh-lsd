@@ -44,7 +44,7 @@ if [ -x "$(command -v wget)" ]; then
   wget $bat_url
   
   tar xf  lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz lsd-$lsd_release-x86_64-unknown-linux-gnu/lsd --strip-components=1
-  tar xf  bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz bat-$bat-x86_64-unknown-linux-gnu/bat --strip-components=1
+  tar xf  bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz bat-$bat_release-x86_64-unknown-linux-gnu/bat --strip-components=1
   rm lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz
   rm bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz
 fi
