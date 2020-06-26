@@ -34,7 +34,7 @@ cd $build_dir/bin
 #[ $QUIET ] && arg_q='-q' || arg_q=''
 #[ $QUIET ] && arg_s='-s' || arg_s=''
 #[ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
-lsd_release$(curl -s https://github.com/Peltoche/lsd/releases/latest | cut -d "\"" -f 2 | cut -d "/" -f 8)
+lsd_release=$(curl -s https://github.com/Peltoche/lsd/releases/latest | cut -d "\"" -f 2 | cut -d "/" -f 8)
 lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
 if [ -x "$(command -v wget)" ]; then
   wget $lsd_url
