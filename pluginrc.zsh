@@ -2,3 +2,5 @@
 # Put here your functions, environment variables, aliases and whatever you need.
 
 CURR_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+alias ls="lsd -lA"
