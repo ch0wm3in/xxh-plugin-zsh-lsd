@@ -38,7 +38,7 @@ if [ -x "$(command -v wget)" ]; then
   lsd_release=$(wget -S -O- --max-redirect=0 --save-header https://github.com/Peltoche/lsd/releases/latest 2>&1 | grep -e "location: " | cut -d " " -f 4 | cut -d "/" -f 8)
   lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
   bat_release=$(wget -S -O- --max-redirect=0 --save-header https://github.com/sharkdp/bat/releases/latest 2>&1 | grep -e "location: " | cut -d " " -f 4 | cut -d "/" -f 8)
-  bat_url="https://github.com/Peltoche/lsd/releases/download/$bat_release/bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz
+  bat_url="https://github.com/sharkdp/bat/releases/download/$bat_release/bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz
   
   wget $lsd_url
   wget $bat_url
