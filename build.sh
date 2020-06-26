@@ -15,23 +15,29 @@ done
 
 rm -rf $build_dir
 mkdir -p $build_dir
+mkdir $build_dir/bin
 
 for f in pluginrc.zsh
 do
     cp $CDIR/$f $build_dir/
 done
 
+
+
+
+
 #portable_url='https://,,,/.tar.gz'
 #tarname=`basename $portable_url`
 #
-#cd $build_dir
+cd $build_dir/bin
 #
 #[ $QUIET ] && arg_q='-q' || arg_q=''
 #[ $QUIET ] && arg_s='-s' || arg_s=''
 #[ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
-#
+lsd_release=curl -s https://github.com/Peltoche/lsd/releases/latest | cut -d "\"" -f 2 | cut -d "/" -f 8
+lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd_${lsd_release}_amd64.deb"
 #if [ -x "$(command -v wget)" ]; then
-#  wget $arg_q $arg_progress $portable_url -O $tarname
+  wget $lsd_url
 #elif [ -x "$(command -v curl)" ]; then
 #  curl $arg_s -L $portable_url -o $tarname
 #else
