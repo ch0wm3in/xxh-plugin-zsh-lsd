@@ -35,9 +35,10 @@ cd $build_dir/bin
 #[ $QUIET ] && arg_s='-s' || arg_s=''
 #[ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
 lsd_release=curl -s https://github.com/Peltoche/lsd/releases/latest | cut -d "\"" -f 2 | cut -d "/" -f 8
-lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd_${lsd_release}_amd64.deb"
-#if [ -x "$(command -v wget)" ]; then
+lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
+if [ -x "$(command -v wget)" ]; then
   wget $lsd_url
+  tar xf  lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz lsd-$lsd_release-x86_64-unknown-linux-gnu/lsd --strip-components=1
 #elif [ -x "$(command -v curl)" ]; then
 #  curl $arg_s -L $portable_url -o $tarname
 #else
