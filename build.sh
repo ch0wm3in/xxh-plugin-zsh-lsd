@@ -53,8 +53,8 @@ elif [ -x "$(command -v curl)" ]; then
   lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
   bat_url="https://github.com/sharkdp/bat/releases/download/$bat_release/bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz"
   
-  curl $lsd_url -OJ
-  curl $bat_url -OJ
+  curl $lsd_url -OJL
+  curl $bat_url -OJL
   
   tar xf  lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz lsd-$lsd_release-x86_64-unknown-linux-gnu/lsd --strip-components=1
   tar xf  bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz bat-$bat_release-x86_64-unknown-linux-gnu/bat --strip-components=1
