@@ -36,7 +36,7 @@ cd $build_dir/bin
 #[ $QUIET ] && arg_progress='' || arg_progress='--show-progress'
 if [ -x "$(command -v wget)" ]; then
   lsd_release=$(wget -S -O- --max-redirect=0 --save-header https://github.com/Peltoche/lsd/releases/latest 2>&1 | grep -e "Location: " | cut -d " " -f 4 | cut -d "/" -f 8)
-  lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
+  lsd_url="https://github.com/lsd-rs/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
   bat_release=$(wget -S -O- --max-redirect=0 --save-header https://github.com/sharkdp/bat/releases/latest 2>&1 | grep -e "Location: " | cut -d " " -f 4 | cut -d "/" -f 8)
   bat_url="https://github.com/sharkdp/bat/releases/download/$bat_release/bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz"
   
@@ -50,7 +50,7 @@ if [ -x "$(command -v wget)" ]; then
 elif [ -x "$(command -v curl)" ]; then
   lsd_release=$(curl -s https://github.com/Peltoche/lsd/releases/latest -D- | grep "location: " | cut -d "/" -f 8 | tr -d "\r")
   bat_release=$(curl -s https://github.com/sharkdp/bat/releases/latest -D- | grep "location: " | cut -d "/" -f 8 | tr -d "\r")
-  lsd_url="https://github.com/Peltoche/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
+  lsd_url="https://github.com/lsd-rs/lsd/releases/download/$lsd_release/lsd-$lsd_release-x86_64-unknown-linux-gnu.tar.gz"
   bat_url="https://github.com/sharkdp/bat/releases/download/$bat_release/bat-$bat_release-x86_64-unknown-linux-gnu.tar.gz"
   
   curl $lsd_url -OJL
